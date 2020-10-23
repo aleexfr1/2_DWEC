@@ -1,0 +1,3 @@
+cuando creas nuevos archivos -- git add ./*
+cuando haces modificaciones del archivo -- git commit -m "MENSAJE"
+git push/ git push origin master
