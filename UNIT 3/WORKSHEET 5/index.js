@@ -39,8 +39,10 @@ class Book {
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.read = false;
-        this.readDate = null;
+        this.read = readed;
+
+        if(readed==undefined){this.readDate=Date.now;}
+        if(readed==undefined){this.read=false;}
     }
 
     BookReaded(){
