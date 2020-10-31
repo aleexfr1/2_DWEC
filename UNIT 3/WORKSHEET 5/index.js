@@ -33,92 +33,74 @@ Every Booklist should have a few methods:
 
 
 
-class Book {
-    constructor(title, genre, author){
-
-        this.title = title;
-        this.genre = genre;
-        this.author = author;
-        this.read = readed;
-
-        if(readed==undefined){this.readDate=Date.now;}
-        if(readed==undefined){this.read=false;}
-    }
-
-    BookReaded(){
-        read=true;
-        readDate=Date.now().toLocaleString();
-    }
-
-
-
-    get title (){
-        return this.title;
-    }
-
-    get genre (){
-        return this.genre;
-    }
-
-    get author (){
-        return this.author;
-    }
-
-    get read (){
-        return this.read;
-    }
-
-    get readDate (){
-        return this.readDate;
-    }
-
-    set title (title){
-        this.title = title;
-    }
-
-    set genre (genre){
-        this.genre = genre;
-    }
-
-    set author (author){
-        this.author=author;
-    }
-
-    set read (read){
-        this.read=read;
-    }
-
-    set readDate (readDate){
-        this.readDate=readDate;
-    }
-}
-
-class BookList {
-        constructor(){
-
-            this.list=[];
-            this.numberBooksRead = 0;
+    class Book{
+        constructor(title, genre, author, read, readdate) {
+            this.title = title || "No title";
+            this.genre = genre || "Fiction";
+            this.author = author || "No author";
+            this.read = read || false;
+            this.readdate = new Date(readdate);
         }
-
-        addBook(title, genre, author){
-
-            this.list.push(new Book(title, genre, author));
+    } 
+    
+    class BookList {
+        constructor(booklist = []){
+            this.booklist = booklist;
+            this.lastBook = undefined;
         }
-
-        bookFinished(){
-            this.numberBooksRead++;
+    
+        get currentBook() {
+            for (const book of this.booklist) {
+                if (!book.read) {
+                    return book;
+                }
+            }
+            return null;
         }
-}
+    
+        get readedBooks(){
+            return this.books.filter(book => book.read).length;
+        }
+    
         
-
-        allBooks();{
-            var total =[];
-            list.foreach(i => total.push(i));
-            return total;
+        get unreadedBooks(){
+            return this.books.filter(book => !book.read).length;
         }
-
-
-        miLista = new BookList();
-        miLista.numberBooksRead
-
-a.addBook("Los Girasoles Ciegos", "Tragedia", "Alberto Mendez");
+    
+        get nextBook() {
+            for (const book of this.booklist) {
+                if (!book.read && book != this.currentBook) {
+                    return book;
+                }
+            }
+            return null;
+        }
+    
+        add(book) {
+            this.booklist.push(book);
+        }
+    
+        finishCurrentBook() {
+            if (this.currentBook != null) {
+                this.currentBook.readDate = new Date(Date.now());
+                this.lastBook = this.currentBook;
+                this.currentBook.read = true;
+                return this.lastBook;
+            }
+            return null;
+        }
+    }
+    var listaLibros = new BookList();
+    
+    function agregarLibros(){
+        var t = document.getElementById("titulo").value;
+        var g = document.getElementById("genero").value;
+        var a = document.getElementById("autor").value;
+        libro = new Book(t, g, a);
+        listaLibros.add(libro);
+    
+        var fila="<tr><td>"+t+"</td><td>"+g+"</td><td>"+a+"</td></tr>";
+        var btn = document.createElement("TR");
+           btn.innerHTML=fila;
+        document.getElementById("tablita").appendChild(btn);
+    }
