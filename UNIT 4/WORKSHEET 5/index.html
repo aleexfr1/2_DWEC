@@ -8,7 +8,7 @@
 <body>
 <script  language=JavaScript> 
 
-function go(){
+function enviar(){
 
 if (document.form.password.value =='CONTRASEÑA' && document.form.login.value =='USUARIO'){ 
         document.form.submit(); 
@@ -18,14 +18,15 @@ if (document.form.password.value =='CONTRASEÑA' && document.form.login.value ==
     } 
 } 
 </script> 
-<FORM name=form action="TU_PAGINA_WEB.HTML">
-<P>Nombre completo:    <INPUT type=text name=name>
-<P>DNI:    <INPUT type=text name=dni>
-<P>Telefono:    <INPUT type=text name=phone>
-<P>Usuario:    <INPUT type=text name=login> 
-<P>Contraseña: <INPUT type=password name=password> 
-<P>Confirmar contraseña: <INPUT type=password name=password> 
-<INPUT onclick=go() type=button value=Enviar>
+<form name=form action="formulario.html">
+<p>Nombre completo:      <input type=text name=name>
+<p>DNI:                  <input type=text name=dni>
+<p>Telefono:             <input type=text name=phone>
+<p>Usuario:              <input type=text name=login> 
+<p>Contraseña:           <input type=password name=password> 
+<p>Confirmar contraseña: <input type=password name=password> 
+
+<input onclick=go() type=button value=Enviar>
 
 </FORM> 
 </body>
