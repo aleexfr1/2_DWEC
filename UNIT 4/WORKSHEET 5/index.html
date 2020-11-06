@@ -20,10 +20,10 @@ if (document.form.password.value =='CONTRASEÑA' && document.form.login.value ==
 </script> 
 <form name=form action="formulario.html">
 <p>Nombre completo:      <input type=text name=name>
-<p>DNI:                  <input type=text name=dni>
-<p>Telefono:             <input type=text name=phone>
+<p>DNI:                  <input type=text name=dni pattern= "(^([0-9]{8,8}\-[A-Z])|^)$" required/>
+<p>Telefono:             <input type=text name=phone pattern= "^[0-9]{9}$" required/>
 <p>Usuario:              <input type=text name=login> 
-<p>Contraseña:           <input type=password name=password> 
+<p>Contraseña:           <input type=password name=password pattern="[A-Za-z0-9!?-]{8,12}" required/> 
 <p>Confirmar contraseña: <input type=password name=password> 
 
 <input onclick=go() type=button value=enviar>
