@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login de usuario</title>
+</head>
+
+<body>
+<script  language=JavaScript> 
+
+function go(){
+
+if (document.form.password.value =='CONTRASEÑA' && document.form.login.value =='USUARIO'){ 
+        document.form.submit(); 
+    } 
+    else{ 
+         alert("Por favor ingrese, nombre de usuario y contraseña correctos."); 
+    } 
+} 
+</script> 
+<FORM name=form action="TU_PAGINA_WEB.HTML">
+<P>Nombre completo:    <INPUT type=text name=name>
+<P>DNI:    <INPUT type=text name=dni>
+<P>Telefono:    <INPUT type=text name=phone>
+<P>Usuario:    <INPUT type=text name=login> 
+<P>Contraseña: <INPUT type=password name=password> 
+<P>Confirmar contraseña: <INPUT type=password name=password> 
+<INPUT onclick=go() type=button value=Validar>
+
+</FORM> 
+</body>
+</html>
