@@ -7,7 +7,8 @@ window.onload = () =>
 
 
 }
-    var posX = 0, posY = 0;
+    var BolaPosX = 0, BolaPosY = 0;
+    var Bola2PosX = 0, Bola2PosY = 0;
     var incX = 2, incY = 2;
 
     function anima()
@@ -15,17 +16,18 @@ window.onload = () =>
         let bola = document.getElementById("bola");
         bola.setAttribute("cx", posX);
         bola.setAttribute("cy", posY);
-        posX+=incX;
-        posY++;
+        BolaPosX+=incX;
+        BolaPosY++;
 
-        if (posX >= 500 || posX <=0)
+        if (BolaPosX >= 500 || BolaPosX <=0)
             incX=-2;
 
-        let bola2 = document.getElementById("bola");
-        bola.setAttribute("cx", posX);
-        bola.setAttribute("cy", posY);
-        posX+=incX;
+        let bola2 = document.getElementById("bola2");
+        bola2.setAttribute("cx", Bola2PosX);
+        bola2.setAttribute("cy", Bola2PosY);
+        Bola2PosX+=incX;
+        Bola2PosY++;
 
-        if (posY >= 500 || posY <=0)
-            incY=-2;
+        if (Bola2PosX >= 500 || Bola2PosX <=0)
+            incY=-1;
     }
