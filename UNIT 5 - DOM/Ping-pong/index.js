@@ -55,15 +55,15 @@ function updateBall(){
   yBall = yBall + vyBall;
 }
 
-function updateStick (){
+function actualizarPalo (){
    this.jugador1 = new stick (5, 0);
    this.jugador1.y = this.height/2 - this.jugador1.height/2;
-   this.jugador2 = new Paddle(this.width - 5 - 2, 0);
+   this.jugador2 = new Palo(this.width - 5 - 2, 0);
     this.jugador2.y = this.height/2 - this.jugador2.height/2;
 
 }
 
-updateStick.prototype.update = function()
+actualizarPalo.prototype.update = function()
 {
     if (this.paused)
         return;
