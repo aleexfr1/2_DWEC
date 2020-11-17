@@ -1,11 +1,28 @@
-var velX=1; velY=2;
-var bola, radio;
 
 window.onload = function ()
 {
-    setInterval(animaBolas, 30);
-    bola = document.getElementById("bola0");
-    radio = parseInt(bola.getAttribute("r"));
+
+    // Crear bolas
+
+    for (i=0; i<10; i++)
+    {
+        let circ = document.createElementNS("http://www.w3.org/2000/svg","circle");
+        circ.setAttributeNS(null,"cx",20+(i*3));
+        circ.setAttributeNS(null,"cy",20+(i*3));
+        circ.setAttributeNS(null,"r",2*i);
+        circ.setAttributeNS(null,"fill","red");
+
+        document.getElementsByTagName("svg"[0].appendChild(circ));
+    }
+    setInterval(animaTodasBolas, 30);
+    bolas = document.getElementsByTagName("circle");
+    for (i=0; i<bolas.length; i++)
+
+    {
+        // Velocidad bolas
+        bolas[i].velX=1*(i+1);
+        bolas[i].velY=1*(i+1);
+    }
     
 }
 
