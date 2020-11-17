@@ -26,13 +26,21 @@ window.onload = function ()
     
 }
 
+function animaTodasBolas()
+{
+    for (i=0; i<bolas.length; i++)
+{
+    animaBolas(bolas[i]);
+}
+}
+
 function animaBolas() // movimiento bolas
 {
     let posXactual = parseInt(bola.getAttribute("cx")) +velX;
     bola.setAttribute("cx",posXactual);
 
     let posYactual = parseInt(bola.getAttribute("cy")) +velY;
-    bola.setAttribute("cx",posYactual);
+    bola.setAttribute("cy",posYactual);
 
     // Detectar colisiones
 
