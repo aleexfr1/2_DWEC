@@ -1,14 +1,14 @@
 'use strict';
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var stick = {
+var Palo = {
   width: 20,
   height: 100
 };
 
-var yPalo = canvas.height/2 - stick.height/2;
+var yPalo = canvas.height/2 - Palo.height/2;
 var xInitialPosition1 = 25;
-var xInitialPosition2 = canvas.width - xInitialPosition1 - stick.width;
+var xInitialPosition2 = canvas.width - xInitialPosition1 - Palo.width;
 
 var xBall = canvas.width/2;
 var yBall = canvas.height/2;
@@ -21,9 +21,9 @@ function DibujarPalo() {
 
 
     ctx.fillStyle = '#e8efe8'; // con esto se elige el color y con eso ya se puede pintar, es como elegir primro el pincel
-    ctx.fillRect(xInitialPosition1, yPalo, stick.width, stick.height);  // pinta en las cordenadas x y ancho y alto
+    ctx.fillRect(xInitialPosition1, yPalo, Palo.width, Palo.height);  // pinta en las cordenadas x y ancho y alto
 
-    ctx.fillRect( xInitialPosition2, yPalo, stick.width, stick.height);
+    ctx.fillRect( xInitialPosition2, yPalo, Palo.width, Palo.height);
   }
 }
 
@@ -56,7 +56,7 @@ function updateBall(){
 }
 
 function actualizarPalo (){
-   this.jugador1 = new stick (5, 0);
+   this.jugador1 = new Palo (5, 0);
    this.jugador1.y = this.height/2 - this.jugador1.height/2;
    this.jugador2 = new Palo(this.width - 5 - 2, 0);
     this.jugador2.y = this.height/2 - this.jugador2.height/2;
