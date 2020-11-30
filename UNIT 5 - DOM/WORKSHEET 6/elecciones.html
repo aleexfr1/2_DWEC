@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart','geochart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Diputados', 'Voto por ciudadano'],
+          ['PP',     89],
+          ['PSOE',      120],
+          ['Ciudadanos',  10],
+          ['VOX', 52],
+          ['Unidas Podemos',35]
+        ]);
+
+        var options = {
+          title: 'Elecciones Generales 2019 - 28A',
+          is3D: true,
+          animation:{
+            duration: 2000,
+            easing: 'inAndOut',
+      },
+
+      vAxis: {minValue:0, maxValue:1000}
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('elecciones'));
+
+        chart.draw(data, options);
+        drawChart2();
+      }
+
+      function drawChart2() {
+        var data2 = google.visualization.arrayToDataTable([
+         ['Partido', 'Diputados por Partido', { role: 'style' }],
+         ['PP', 89, 'blue'],            
+         ['PSOE', 120, 'red'],            
+         ['Ciudadanos', 10, 'orange'],
+         ['VOX', 52, 'green' ], 
+         ['Unidas Podemos', 35, 'purple'] 
+      ]);
+      var options2 = {
+          title: 'Elecciones Generales 2019 - 28A',
+
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('barras'));
+
+        chart.draw(data2, options2);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="elecciones" style="width: 900px; height: 500px;"></div>
+    <div id="barras" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
