@@ -1,0 +1,4 @@
+{"listaNotas":[]
+    {"titulo":"Primera nota", "mensaje":"Nota del primer examen"},
+    {"titulo":"Segunda nota", "mensaje":"Nota del segundo examen"}
+}
