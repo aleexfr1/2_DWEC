@@ -1,0 +1,24 @@
+{"listaCorreos":[
+    {
+        "remitente":"Alex", 
+        "asunto":"Feliz Navidad", 
+        "destinatario":"Mama",
+        "mensaje":"Hola"
+        },
+
+
+    {   "remitente":"Jose", 
+        "asunto":"Ejercicios Ajax", 
+        "destinatario":"Alex",
+        "mensaje":"Hola"
+        },
+
+    
+    {   "remitente":"Mama", 
+        "asunto":"Lista de la compra", 
+        "destinatario":"Alex",
+        "mensaje":"Hola"
+        }
+
+]
+}
