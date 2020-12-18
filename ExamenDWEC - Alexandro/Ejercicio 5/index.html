@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart','geochart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Año', 'Poblacion', { role: 'style' } ],
+        ['2017', 14252, 'opacity: 0.8; fill-color: green'],
+        ['2018', 23360, 'opacity: 0.2; fill-color: green'],
+        ['2019', 40421, 'opacity: 0.6; fill-color: green'],
+        ['2020', 43500, 'opacity: 0.4; fill-color: green']
+
+      ]);
+
+        var options = {
+          
+          title: 'Evolucion de la poblacion de Navalcarnero',
+          backgroundColor: 'lightblue',
+          width: 900,
+          height: 700,
+          animation:{
+        duration: 5000,
+        easing: 'out',
+      },
+      vAxis: {minValue:0, maxValue:1000}
+    };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('barras'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barras" style="width: 900px; height: 700px;"></div>
+  </body>
+</html>
