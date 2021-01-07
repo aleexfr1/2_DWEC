@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/7322684d64.js" crossorigin="anonymous"></script>
-    <title>Peliculas API</title>
+    <title>The Movie Database</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>    
@@ -24,9 +24,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <input class="form-control mr-sm-2 " type="text" id="name" placeholder="Name" required>
           <input class="form-control mr-sm-2" type="text" placeholder="Year" type="text" id="year"/>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="mostrarPortadas()">Buscar</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="mostrarPortadas()">Search</button>
       </div>
-
     </nav>
     <div id="movies" class="row">
     </div>
@@ -49,19 +48,19 @@
                 <img id="img"></img>
             </div>
             <div id="descripcion" class="col-12 col-md-7">
-              <label><strong>Genero</strong></label>
+              <label><strong>Genre</strong></label>
               <p id="genre"></p>
-              <label><strong>Estrebi</strong></label>
+              <label><strong>Release</strong></label>
               <p id="release"></p>
               <label><strong>Director</strong></label>
               <p id="director"></p>
-              <label><strong>Escritor</strong></label>
+              <label><strong>Writer</strong></label>
               <p id="writer"></p>
-              <label><strong>Actores</strong></label>
+              <label><strong>Actors</strong></label>
               <p id="actors"></p>
-              <label><strong>Argumento</strong></label>
+              <label><strong>Plot</strong></label>
               <p id="plot"></p>
-              <label><strong>Valoracion</strong></label>
+              <label><strong>Rating</strong></label>
               <div>
                 <i id="star1" class="far fa-star"></i>
                 <i id="star2" class="far fa-star"></i>
