@@ -8,13 +8,16 @@
 </head>
 <body>
     <div id="miAplicacion">
-        <input v-on:keyup.enter="anadirRecordatorio" v-model="nuevoRecordatorio">
+        <input v-on:keyup.enter="anadirRecordatorio" v-on:keyup="teclaPulsada" v-model="nuevoRecordatorio">
+        <p>{{totalPendientes}} Tareas pendientes de {{totalTareas}} tareas totales</p>
         <button v-on:click="anadirRecordatorio">Nuevo Recordatorio</button>
+        <button v-on:click="eliminarTareasCompletadas">Borrar tareas completadas</button>
         <br> <br>
-        <div  v-for="(recordatorio, index) in listaRecordatorio">
+        <div  v-for="(recordatorio, index) in listaRecordatorio" v-bind:key="recordatorio">
             {{recordatorio.titulo}} La tarea tiene prioridad {{recordatorio.prioridad}} creado en {{recordatorio.fechaCreacion.getDate()}} y la tarea esta {{recordatorio.completado}}
         <button v-on:click="eliminarTarea">Eliminar tarea</button>
         <button v-on:click="cambiarCompletado(index)">¿Tarea Completada?</button>
+        <br>
     </div>
     </div>
     <script src="index.js"></script>
