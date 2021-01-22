@@ -6,6 +6,12 @@ var app = new Vue({
       isButtonDisabled: true
     },
 
+    mounted() {
+
+        if(localStorage.listaTareas)
+            this.listaRecordatorio = JSON.parse(localStorage.listaTareas);
+    },
+
     methods:{
         anadirRecordatorio: function(){
             this.listaRecordatorio.push({
@@ -14,6 +20,7 @@ var app = new Vue({
                 fechaCreacion: new Date(),
                 completado: false,});
                 this.nuevoRecordatorio = "";
+                this.actualizarLocalStorage();
             },
         cambiarEstadoTarea: function(posicion){
             // Muestra posicion de los elementos
@@ -32,6 +39,7 @@ var app = new Vue({
                 this.listaRecordatorio[posicion].completado=false;
             } else {this.listaRecordatorio[posicion].completado=true};
 
+            this.actualizarLocalStorage();
             console.log(this.listaRecordatorio[posicion].completado);
                 
             
@@ -49,7 +57,32 @@ var app = new Vue({
         for (i=0; i<this.listaRecordatorio.length; i++)
             if(this.listaRecordatorio[i].completado)
             this.listaRecordatorio.splice(i,1)
+            this.actualizarLocalStorage();
+        },
+
+        actualizarLocalStorage: function() {
+
+            localStorage.listaTareas = JSON.stringify(this.listaRecordatorio);
+
+
         }
+
+        listaRecordatorioFiltrada: function()
+    {
+        if (this.empiezaPor =="") 
+            return this.listaRecordatorio;
+
+        a= this.listaRecordatorio.filter((recordatorio)=>
+        {
+            if (recordatorio.titulo.indexOf(this.empiezaPor)>=0)
+                return true;
+            else
+                return false;
+        });
+
+    
+
+        return a;
 },
 
     computed:{
