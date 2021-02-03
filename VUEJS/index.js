@@ -1,3 +1,8 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
 var app = new Vue({
     el: '#miAplicacion',
     data: {
@@ -65,25 +70,8 @@ var app = new Vue({
             localStorage.listaTareas = JSON.stringify(this.listaRecordatorio);
 
 
-        }
+        },
 
-        listaRecordatorioFiltrada: function()
-    {
-        if (this.empiezaPor =="") 
-            return this.listaRecordatorio;
-
-        a= this.listaRecordatorio.filter((recordatorio)=>
-        {
-            if (recordatorio.titulo.indexOf(this.empiezaPor)>=0)
-                return true;
-            else
-                return false;
-        });
-
-    
-
-        return a;
-},
 
     computed:{
        totalTareas: function(){
@@ -100,5 +88,5 @@ var app = new Vue({
         
         return total;
     }
-    }
+    },
   })
